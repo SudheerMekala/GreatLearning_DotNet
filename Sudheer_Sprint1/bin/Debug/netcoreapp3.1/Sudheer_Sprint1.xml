@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sudheer_Sprint1</name>
+    </assembly>
+    <members>
+        <member name="T:Sudheer_Sprint1.Controllers.BaseController`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.BaseController`1.#ctor(Sudheer_Sprint1.Models.Context)">
+            <summary>
+            public constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.BaseController`1.Create(`0)">
+            <summary>
+            Create an entity by providing a unique id
+            </summary>
+            <remarks></remarks>
+            <param name="entity">Input entity</param>
+            <response code="200">Entity created</response>
+            <response code="404">Entity not created</response>
+            <response code="500">Oops! Can't create the entity right now</response>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.BaseController`1.Update(System.Int32,`0)">
+            <summary>
+            Update a entity using a unique id
+            </summary>
+            <remarks></remarks>
+            <param name="entity">The entity</param>
+            <response code="200">entity updated</response>
+            <response code="404">entitys not found</response>
+            <response code="500">Oops! Can't update the entity right now</response>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.BaseController`1.GetAll">
+            <summary>
+            Retrieves all entities
+            </summary>
+            <remarks></remarks>
+            <response code="200">Entities retrieved</response>
+            <response code="404">Entities not found</response>
+            <response code="500">Oops! Can't get your entities right now</response>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.BaseController`1.GetById(System.Int32)">
+            <summary>
+            Retrieves a specific entity by unique id
+            </summary>
+            <remarks></remarks>
+            <param name="id">The entity id</param>
+            <response code="200">entity retrieved</response>
+            <response code="404">entity not found</response>
+            <response code="500">Oops! Can't lookup your entity right now</response>
+        </member>
+        <member name="T:Sudheer_Sprint1.Controllers.HomeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.HomeController.#ctor(Microsoft.Extensions.Logging.ILogger{Sudheer_Sprint1.Controllers.HomeController})">
+            <summary>
+            
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.HomeController.Index">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.HomeController.Privacy">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.HomeController.Error">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Sudheer_Sprint1.Controllers.LoginBaseController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Controllers.ProjectController">
+            <summary>
+            UserController
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.ProjectController.#ctor(Sudheer_Sprint1.Models.Context)">
+            <summary>
+            UserController
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Controllers.TaskController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.TaskController.#ctor(Sudheer_Sprint1.Models.Context)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Sudheer_Sprint1.Controllers.UserController">
+            <summary>
+            UserController
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.UserController.#ctor(Sudheer_Sprint1.Models.Context)">
+            <summary>
+            Public constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.BaseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.BaseModel.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.Context">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Context.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Sudheer_Sprint1.Models.Context})">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.Context.Users">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.Context.Projects">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.Context.Tasks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.ErrorViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.ErrorViewModel.RequestId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.ErrorViewModel.ShowRequestId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.LoginModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.LoginModel.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.LoginModel.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.ProjectModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.ProjectModel.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.ProjectModel.Detail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.ProjectModel.CreatedOn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.TaskModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.TaskModel.ProjectId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.TaskModel.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.TaskModel.AssignedToUserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.TaskModel.Detail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.TaskModel.CreatedOn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.UserModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.UserModel.FirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.UserModel.LastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.UserModel.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sudheer_Sprint1.Models.UserModel.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Sudheer_Sprint1.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Sudheer_Sprint1.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
