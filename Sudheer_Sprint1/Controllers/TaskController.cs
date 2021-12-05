@@ -1,57 +1,23 @@
-﻿using Sudheer_Sprint1.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using Sudheer_Sprint1.Models;
+using Sudheer_Sprint1.Models.Repositories;
 
 namespace Sudheer_Sprint1.Controllers
 {
     /// <summary>
-    /// 
+    /// TaskController
     /// </summary>
+    [Route("api/[controller]")]
+    [ApiController]
     public class TaskController: BaseController<TaskModel>
     {
-        private readonly Context _context;
-
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="context"></param>
-        public TaskController (Context context):base(context)
+        /// <param name="taskRepository"></param>
+        public TaskController (ITaskRepository taskRepository) :base(taskRepository)
         {
-            _context = context;
-
-            if(_context.Tasks.Count() == 0)
-            {
-                _context.Tasks.Add(new TaskModel
-                {
-                    ProjectId=1,
-                    Status=2,
-                    AssignedToUserId=1,
-                    Detail = "This is a test task",
-                    CreatedOn = DateTime.Now
-                });
-
-                _context.Tasks.Add(new TaskModel
-                {
-                    ProjectId = 1,
-                    Status = 3,
-                    AssignedToUserId = 2,
-                    Detail = "This is a test task",
-                    CreatedOn = DateTime.Now
-                });
-
-                _context.Tasks.Add(new TaskModel
-                {
-                    ProjectId = 2,
-                    Status = 4,
-                    AssignedToUserId = 2,
-                    Detail = "This is a test task",
-                    CreatedOn = DateTime.Now
-                });
-
-                _context.SaveChanges();
-            }
+            
         }
     }
 }

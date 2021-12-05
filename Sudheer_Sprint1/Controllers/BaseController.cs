@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Sudheer_Sprint1.Models;
+using Sudheer_Sprint1.Models.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Sudheer_Sprint1.Controllers
 {
@@ -17,16 +15,16 @@ namespace Sudheer_Sprint1.Controllers
     [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseController<T> : ControllerBase where T : BaseModel
+   public class BaseController<T> : ControllerBase where T : BaseModel
     {
-        private readonly Context _context;
+        private readonly IBaseRepository<T> _baseRepository;
         /// <summary>
         /// public constructor
         /// </summary>
-        /// <param name="context"></param>
-        public BaseController(Context context)
+        /// <param name="baseRepository"></param>
+        public BaseController(IBaseRepository<T> baseRepository)
         {
-            _context = context;
+            _baseRepository = baseRepository;
         }
 
         /// <summary>
@@ -48,13 +46,13 @@ namespace Sudheer_Sprint1.Controllers
                 if (entity == null)
                     return BadRequest();
 
-                _context.Set<T>().Add(entity);
-                _context.SaveChanges();
-
-                return Ok(new
+                if(_baseRepository.Create(entity))
                 {
-                    message = "A new entity has been created"
-                });
+                    return Ok(new
+                    {
+                        message = "A new entity has been created"
+                    });
+                }
             }
             catch (Exception)
             {
@@ -67,6 +65,7 @@ namespace Sudheer_Sprint1.Controllers
         /// Update a entity using a unique id
         /// </summary>
         /// <remarks></remarks>
+        /// <param name="id"></param>
         /// <param name="entity">The entity</param>
         /// <response code="200">entity updated</response>
         /// <response code="404">entitys not found</response>
@@ -82,17 +81,13 @@ namespace Sudheer_Sprint1.Controllers
                 if (id != entity.Id)
                     return BadRequest();
 
-                if (!(_context.Set<T>().Any(e => e.Id == id)))
+                if(_baseRepository.Update(id,entity))
                 {
-                    return NotFound();
+                    return Ok(new
+                    {
+                        message = "An existing entity has been updated"
+                    });
                 }
-                _context.Entry(entity).State = EntityState.Modified;
-                _context.SaveChanges();
-
-                return Ok(new
-                {
-                    message = "An existing entity has been updated"
-                });
             }
             catch (Exception)
             {
@@ -116,7 +111,7 @@ namespace Sudheer_Sprint1.Controllers
         {
             try
             {
-                return _context.Set<T>().ToList();
+                return _baseRepository.GetAll().ToList();
             }
             catch (Exception)
             {
@@ -142,7 +137,7 @@ namespace Sudheer_Sprint1.Controllers
         {
             try
             {
-                var entity = _context.Set<T>().FirstOrDefault(i => i.Id == id);
+                var entity = _baseRepository.GetById(id);
                 if (entity == null)
                     return NotFound();
 
@@ -156,3 +151,4 @@ namespace Sudheer_Sprint1.Controllers
         }
     }
 }
+ 

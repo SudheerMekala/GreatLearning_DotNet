@@ -14,12 +14,19 @@ using System.Threading.Tasks;
 
 namespace Sudheer_Sprint1.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-
     public class AuthenticateController : LoginBaseController
     {
         private IConfiguration _config;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="config"></param>
         public AuthenticateController(IConfiguration config)
         {
             _config = config;

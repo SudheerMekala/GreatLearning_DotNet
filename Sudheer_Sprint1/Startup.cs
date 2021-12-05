@@ -1,20 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sudheer_Sprint1.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using System.IO;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Sudheer_Sprint1.Models.Repositories;
 
 namespace Sudheer_Sprint1
 {
@@ -45,20 +40,6 @@ namespace Sudheer_Sprint1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1",
-            //        new OpenApiInfo
-            //            {
-            //                Title = "SprintPlanner",
-            //                Version = "v1"
-            //            }
-            //         );
-
-            //        var filePath = Path.Combine(System.AppContext.BaseDirectory, "Sudheer_Sprint1.xml");
-            //        c.IncludeXmlComments(filePath);
-            //    });
-
             services.AddSwaggerGen(swagger =>
             {
                 //This is to generate the Default UI of Swagger Documentation  
@@ -90,7 +71,6 @@ namespace Sudheer_Sprint1
                                 }
                             },
                             new string[] {}
-
                     }
                 });
             });
@@ -116,6 +96,10 @@ namespace Sudheer_Sprint1
             services.AddDbContext<Context>(c => { 
                 c.UseInMemoryDatabase("SprintPlanner"); 
             });
+            services.AddScoped<IBaseRepository<BaseModel>, BaseRepository<BaseModel>>();
+            services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<ITaskRepository, TaskRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
 
         /// <summary>
@@ -131,8 +115,6 @@ namespace Sudheer_Sprint1
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(); 
-
-
 
                 app.UseSwaggerUI(o =>
                 {

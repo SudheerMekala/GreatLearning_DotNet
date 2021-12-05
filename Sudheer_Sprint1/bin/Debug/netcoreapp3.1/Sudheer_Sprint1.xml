@@ -4,17 +4,28 @@
         <name>Sudheer_Sprint1</name>
     </assembly>
     <members>
+        <member name="T:Sudheer_Sprint1.Controllers.AuthenticateController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Controllers.AuthenticateController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+        </member>
         <member name="T:Sudheer_Sprint1.Controllers.BaseController`1">
             <summary>
             
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:Sudheer_Sprint1.Controllers.BaseController`1.#ctor(Sudheer_Sprint1.Models.Context)">
+        <member name="M:Sudheer_Sprint1.Controllers.BaseController`1.#ctor(Sudheer_Sprint1.Models.Repositories.IBaseRepository{`0})">
             <summary>
             public constructor
             </summary>
-            <param name="context"></param>
+            <param name="baseRepository"></param>
         </member>
         <member name="M:Sudheer_Sprint1.Controllers.BaseController`1.Create(`0)">
             <summary>
@@ -31,6 +42,7 @@
             Update a entity using a unique id
             </summary>
             <remarks></remarks>
+            <param name="id"></param>
             <param name="entity">The entity</param>
             <response code="200">entity updated</response>
             <response code="404">entitys not found</response>
@@ -94,32 +106,33 @@
             UserController
             </summary>
         </member>
-        <member name="M:Sudheer_Sprint1.Controllers.ProjectController.#ctor(Sudheer_Sprint1.Models.Context)">
+        <member name="M:Sudheer_Sprint1.Controllers.ProjectController.#ctor(Sudheer_Sprint1.Models.Repositories.IProjectRepository)">
             <summary>
-            UserController
+            
             </summary>
+            <param name="projectRepository"></param>
         </member>
         <member name="T:Sudheer_Sprint1.Controllers.TaskController">
             <summary>
-            
+            TaskController
             </summary>
         </member>
-        <member name="M:Sudheer_Sprint1.Controllers.TaskController.#ctor(Sudheer_Sprint1.Models.Context)">
+        <member name="M:Sudheer_Sprint1.Controllers.TaskController.#ctor(Sudheer_Sprint1.Models.Repositories.ITaskRepository)">
             <summary>
             
             </summary>
-            <param name="context"></param>
+            <param name="taskRepository"></param>
         </member>
         <member name="T:Sudheer_Sprint1.Controllers.UserController">
             <summary>
             UserController
             </summary>
         </member>
-        <member name="M:Sudheer_Sprint1.Controllers.UserController.#ctor(Sudheer_Sprint1.Models.Context)">
+        <member name="M:Sudheer_Sprint1.Controllers.UserController.#ctor(Sudheer_Sprint1.Models.Repositories.IUserRepository)">
             <summary>
             Public constructor
             </summary>
-            <param name="context"></param>
+            <param name="userRepository"></param>
         </member>
         <member name="T:Sudheer_Sprint1.Models.BaseModel">
             <summary>
@@ -206,6 +219,127 @@
             <summary>
             
             </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.Repositories.BaseRepository`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.BaseRepository`1.#ctor(Sudheer_Sprint1.Models.Context)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.BaseRepository`1.Create(`0)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.BaseRepository`1.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.BaseRepository`1.GetById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.BaseRepository`1.Update(System.Int32,`0)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.Repositories.IBaseRepository`1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.IBaseRepository`1.Create(`0)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.IBaseRepository`1.Update(System.Int32,`0)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.IBaseRepository`1.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.IBaseRepository`1.GetById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.Repositories.IProjectRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.Repositories.ITaskRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.Repositories.IUserRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.Repositories.ProjectRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.ProjectRepository.#ctor(Sudheer_Sprint1.Models.Context)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.Repositories.TaskRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.TaskRepository.#ctor(Sudheer_Sprint1.Models.Context)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Sudheer_Sprint1.Models.Repositories.UserRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sudheer_Sprint1.Models.Repositories.UserRepository.#ctor(Sudheer_Sprint1.Models.Context)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
         </member>
         <member name="T:Sudheer_Sprint1.Models.TaskModel">
             <summary>
