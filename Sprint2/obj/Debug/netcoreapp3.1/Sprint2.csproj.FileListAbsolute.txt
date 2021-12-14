@@ -1,0 +1,4 @@
+C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sprint2\obj\Debug\netcoreapp3.1\Sprint2.csprojAssemblyReference.cache
+C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sprint2\obj\Debug\netcoreapp3.1\Sprint2.AssemblyInfoInputs.cache
+C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sprint2\obj\Debug\netcoreapp3.1\Sprint2.AssemblyInfo.cs
+C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sprint2\obj\Debug\netcoreapp3.1\Sprint2.csproj.CoreCompileInputs.cache

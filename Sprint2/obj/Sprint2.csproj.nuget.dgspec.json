@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sudheer_Sprint1\\Sudheer_Sprint1.csproj": {}
+    "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\Sprint2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\Sudheer_Sprint2.csproj": {
+    "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\Sprint2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\Sudheer_Sprint2.csproj",
-        "projectName": "Sudheer_Sprint2",
-        "projectPath": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\Sudheer_Sprint2.csproj",
+        "projectUniqueName": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\Sprint2.csproj",
+        "projectName": "Sprint2",
+        "projectPath": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\Sprint2.csproj",
         "packagesPath": "C:\\Users\\Sudheer\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\obj\\",
         "projectStyle": "PackageReference",
@@ -32,7 +32,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sudheer_Sprint1\\Sudheer_Sprint1.csproj": {
+                "projectPath": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sudheer_Sprint1\\Sudheer_Sprint1.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -101,11 +105,7 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {
-              "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\Sudheer_Sprint2.csproj": {
-                "projectPath": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\Sudheer_Sprint2.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

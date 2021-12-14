@@ -66,7 +66,6 @@ C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netc
 C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netcoreapp3.1\Sudheer_Sprint1.AssemblyInfoInputs.cache
 C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netcoreapp3.1\Sudheer_Sprint1.AssemblyInfo.cs
 C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netcoreapp3.1\Sudheer_Sprint1.csproj.CoreCompileInputs.cache
-C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netcoreapp3.1\Sudheer_Sprint1.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netcoreapp3.1\Sudheer_Sprint1.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netcoreapp3.1\Sudheer_Sprint1.RazorAssemblyInfo.cache
 C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netcoreapp3.1\Sudheer_Sprint1.RazorAssemblyInfo.cs
@@ -127,3 +126,5 @@ C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netc
 C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netcoreapp3.1\Sudheer_Sprint1.Views.pdb
 C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netcoreapp3.1\Sudheer_Sprint1.csproj.CopyComplete
 C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\obj\Debug\netcoreapp3.1\Sudheer_Sprint1.genruntimeconfig.cache
+C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\bin\Debug\netcoreapp3.1\Sudheer_Sprint2.dll
+C:\Users\Sudheer\source\repos\Sudheer_Sprint1 - 2\Sudheer_Sprint1\bin\Debug\netcoreapp3.1\Sudheer_Sprint2.pdb
