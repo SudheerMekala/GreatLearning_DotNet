@@ -44,6 +44,12 @@ namespace Sudheer_Sprint1.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
         private async Task<LoginModel> AuthenticateUser(LoginModel login)
         {
             LoginModel user = null;
@@ -54,6 +60,12 @@ namespace Sudheer_Sprint1.Controllers
             }
             return user;
         }
+
+        /// <summary>
+        /// Login
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [AllowAnonymous]
         [HttpPost(nameof(Login))]
         public async Task<IActionResult> Login([FromBody] LoginModel data)
@@ -69,6 +81,10 @@ namespace Sudheer_Sprint1.Controllers
             return response;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet(nameof(Get))]
         public async Task<IEnumerable<string>> Get()
         {

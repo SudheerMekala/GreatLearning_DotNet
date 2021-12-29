@@ -4267,8 +4267,8 @@
     },
     "Sudheer_Sprint2/1.0.0": {
       "type": "project",
-      "path": "../Sprint2/Sudheer_Sprint2.csproj",
-      "msbuildProject": "../Sprint2/Sudheer_Sprint2.csproj"
+      "path": "../Sudheer_Sprint2/Sudheer_Sprint2.csproj",
+      "msbuildProject": "../Sudheer_Sprint2/Sudheer_Sprint2.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4290,11 +4290,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sudheer_Sprint1\\Sudheer_Sprint1.csproj",
+      "projectUniqueName": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint3\\GreatLearning_Dotnet\\Sudheer_Sprint1\\Sudheer_Sprint1.csproj",
       "projectName": "Sudheer_Sprint1",
-      "projectPath": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sudheer_Sprint1\\Sudheer_Sprint1.csproj",
+      "projectPath": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint3\\GreatLearning_Dotnet\\Sudheer_Sprint1\\Sudheer_Sprint1.csproj",
       "packagesPath": "C:\\Users\\Sudheer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sudheer_Sprint1\\obj\\",
+      "outputPath": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint3\\GreatLearning_Dotnet\\Sudheer_Sprint1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -4316,8 +4316,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\Sudheer_Sprint2.csproj": {
-              "projectPath": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint1 - 2\\Sprint2\\Sudheer_Sprint2.csproj"
+            "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint3\\GreatLearning_Dotnet\\Sudheer_Sprint2\\Sudheer_Sprint2.csproj": {
+              "projectPath": "C:\\Users\\Sudheer\\source\\repos\\Sudheer_Sprint3\\GreatLearning_Dotnet\\Sudheer_Sprint2\\Sudheer_Sprint2.csproj"
             }
           }
         }
@@ -4367,6 +4367,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -4375,7 +4389,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

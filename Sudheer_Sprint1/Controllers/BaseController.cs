@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Sudheer_Sprint1.Models;
-using Sudheer_Sprint1.Models.Repositories;
+using Sudheer_Sprint1.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;

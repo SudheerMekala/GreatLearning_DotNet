@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Sudheer_Sprint1.Models;
-using Sudheer_Sprint1.Models.Repositories;
+using Sudheer_Sprint1.Repositories;
 
 namespace Sudheer_Sprint1.Controllers
 {

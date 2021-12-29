@@ -9,7 +9,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Sudheer_Sprint1.Models.Repositories;
+using Sudheer_Sprint1.Repositories;
 
 namespace Sudheer_Sprint1
 {

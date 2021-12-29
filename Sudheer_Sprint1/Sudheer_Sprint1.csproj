@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sprint2\Sudheer_Sprint2.csproj" />
+    <ProjectReference Include="..\Sudheer_Sprint2\Sudheer_Sprint2.csproj" />
   </ItemGroup>
 
 </Project>
