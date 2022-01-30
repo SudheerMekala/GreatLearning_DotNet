@@ -18,8 +18,8 @@ namespace Sudheer_Sprint3.IntegrationTests
        
         public UserIntegrationTests(CustomWebApplicationFactory customWebApplicationFactory) : base(customWebApplicationFactory)
         {
-            var randomExceptionMessage = Guid.NewGuid().ToString();
-            var expectedException = new Exception(randomExceptionMessage);
+           // var randomExceptionMessage = Guid.NewGuid().ToString();
+            //var expectedException = new Exception(randomExceptionMessage);
 
             var userRepositoryMock = new Mock<IUserRepository>();
             userRepositoryMock.Setup(x => x.Create(It.IsAny<UserModel>())).Returns(true);

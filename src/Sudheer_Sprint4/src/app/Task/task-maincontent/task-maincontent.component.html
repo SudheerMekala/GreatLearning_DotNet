@@ -1,0 +1,19 @@
+<div fxLayoutAlign="start top" fxFlexFill class="main-div">
+    <mat-card style="background-color: whitesmoke" fxFlex="100">
+        <form fxLayout="column" class="user-form">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+                <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+                  <th mat-header-cell *matHeaderCellDef>
+                    {{column.header}}
+                  </th>
+                  <td mat-cell *matCellDef="let row" >
+                    <!--span style="cursor:pointer;" (click)="sendRouteObject()" >{{column.cell(row)}}</span-->
+                    <span style="cursor:pointer;" [routerLink]="['/UpdateTask']" [queryParams]="{by: ''}">{{column.cell(row)}}</span>
+                  </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> 
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </form>
+    </mat-card>
+</div>

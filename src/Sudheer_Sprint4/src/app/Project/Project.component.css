@@ -1,0 +1,15 @@
+.row-bottom-margin { margin-bottom:5px; }
+
+.row > [class*='col-']:before {
+    background: #e3e3e3;
+    bottom: 0;
+    content: " ";
+    left: 0;
+    position: absolute;
+    width: 1px;
+    top: 0;
+  }
+  
+  .row > [class*='col-']:first-child:before {
+    display: none;
+  }

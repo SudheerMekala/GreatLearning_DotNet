@@ -1,0 +1,28 @@
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-balham.css";
+
+.ag-header-cell-label .ag-header-cell-text {
+    /* Force the width corresponding at how much width
+    we need once the text is laid out vertically */
+    width: 30px;
+    transform: rotate(90deg);
+    margin-top: 50px;
+    /* Since we are rotating a span */
+    display: inline-block;
+}
+
+.row-bottom-margin { margin-bottom:5px; }
+
+.row > [class*='col-']:before {
+    background: #e3e3e3;
+    bottom: 0;
+    content: " ";
+    left: 0;
+    position: absolute;
+    width: 1px;
+    top: 0;
+  }
+  
+  .row > [class*='col-']:first-child:before {
+    display: none;
+  }

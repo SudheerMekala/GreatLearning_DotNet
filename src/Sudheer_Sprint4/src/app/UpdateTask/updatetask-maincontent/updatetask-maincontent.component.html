@@ -1,0 +1,48 @@
+<div fxLayoutAlign="start top" fxFlexFill class="main-div">
+    <mat-card style="background-color: whitesmoke" fxFlex="100">
+        <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="ProjectId">ProjectId</label>
+                <input type="name" class="form-control" id="ProjectId">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="Status">Status</label>
+                <input type="name" class="form-control" id="Status">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="AssignedtoUserId">Assigned to UserId</label>
+                  <input type="AssignedtoUserId" class="form-control" id="AssignedtoUserId">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Detail">Detail</label>
+                    <input type="Detail" class="form-control" id="Detail">
+                  </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-0">
+                    <button mat-stroked-button type="submit" style="background-color:white; margin:5px"  class="login-nav" [routerLink]="['/Task']">
+                        <mat-icon class="account-icon" [inline]="false">save</mat-icon>
+                        <span>Submit</span>
+                    </button>
+                </div>
+                <div class="form-group col-md-1">
+                    <button mat-stroked-button type="submit" style="background-color: white; margin:5px" class="login-nav" [routerLink]="['/Task']">
+                        <mat-icon class="account-icon" [inline]="false">cancel</mat-icon>
+                        <span>Cancel</span>
+                    </button>
+                </div>
+              </div>
+          </form>
+    </mat-card>
+</div>

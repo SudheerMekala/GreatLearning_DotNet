@@ -1,0 +1,13 @@
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-balham.css";
+
+.ag-header-cell-label .ag-header-cell-text {
+    /* Force the width corresponding at how much width
+    we need once the text is laid out vertically */
+    width: 30px;
+    transform: rotate(90deg);
+    margin-top: 50px;
+    /* Since we are rotating a span */
+    display: inline-block;
+}
+

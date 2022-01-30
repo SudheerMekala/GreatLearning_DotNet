@@ -1,0 +1,12 @@
+.main-div mat-card{
+    padding: 0px
+}
+
+.login-form{
+    padding: 20px
+}
+
+.login-toolbar{
+    flex: 1 1 auto;
+    text-align: center;
+}

@@ -1,0 +1,23 @@
+
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <mat-card style="background-color: whitesmoke" fxFlex="25">
+        <mat-toolbar style="background-color:lightslategray">
+            <mat-toolbar-row>
+                <span style="font-size:8mm" class="login-toolbar" style="color:white;font-size:25px;">Welcome</span>
+            </mat-toolbar-row>    
+        </mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+            <mat-form-field>
+                <mat-label>UserName</mat-label>
+                <input matInput placeholder="UserName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type= "password" placeholder="Password">
+            </mat-form-field>
+            <button mat-raised-button type="submit" style="background-color: brown; margin:5px" class="login-nav" [routerLink]="['/User']">
+                <span style="color:white;font-size:25px; font-size: 4mm;">Login</span>
+            </button>
+        </form>
+    </mat-card>
+</div>
