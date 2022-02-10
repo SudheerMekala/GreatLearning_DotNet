@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginAuthenticationService } from "src/app/login/login-maincontent/Services/login-authentication.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-updateproject-navbar',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateprojectNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: LoginAuthenticationService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  getUserName()
+  {
+      return this.authService.getUserName();
+  }
+
+  logout(){
+    this.authService.logout();       
+    this.router.navigate(['']);
+
+}
 }

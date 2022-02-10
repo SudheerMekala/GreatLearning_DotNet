@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Sudheer_Sprint1.Models;
+using Sudheer_Sprint1.Repositories;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -22,27 +23,36 @@ namespace Sudheer_Sprint1.Controllers
     public class AuthenticateController : LoginBaseController
     {
         private IConfiguration _config;
+        private readonly IUserRepository _userRepository;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="config"></param>
-        public AuthenticateController(IConfiguration config)
+        /// <param name="baseRepository"></param>
+        public AuthenticateController(IConfiguration config, IUserRepository userRepository)
         {
             _config = config;
+            _userRepository = userRepository;
+
         }
         private string GenerateJSONWebToken(LoginModel userInfo)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            if(userInfo!=null && !userInfo.UserName.IsNullOrEmpty())
+            {
+                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+                var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken(_config["Jwt:Issuer"],
-              _config["Jwt:Issuer"],
-              null,
-              expires: DateTime.Now.AddMinutes(120),
-              signingCredentials: credentials);
+                var token = new JwtSecurityToken(_config["Jwt:Issuer"],
+                  _config["Jwt:Issuer"],
+                  null,
+                  expires: DateTime.Now.AddMinutes(120),
+                  signingCredentials: credentials);
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+                return new JwtSecurityTokenHandler().WriteToken(token);
+            }
+            return null;
+            
         }
 
         /// <summary>
@@ -56,7 +66,16 @@ namespace Sudheer_Sprint1.Controllers
 
             if (login.UserName == "admin")
             {
-                user = new LoginModel { UserName = "admin", Password = "test123" };
+                user = new LoginModel { UserName = "admin", Password = "admin" };
+            }
+            else
+            {
+                var User = _userRepository.GetAll().FirstOrDefault(u => u.FirstName == login.UserName && u.Password == login.Password);
+                if (User == null)
+                {
+                    return null;
+                }
+                user = new LoginModel { UserName = login.UserName, Password = login.Password };
             }
             return user;
         }
@@ -76,7 +95,10 @@ namespace Sudheer_Sprint1.Controllers
             if (data != null)
             {
                 var tokenString = GenerateJSONWebToken(user);
-                response = Ok(new { Token = tokenString, Message = "Success" });
+                if(!tokenString.IsNullOrEmpty())
+                {
+                    response = Ok(new { CurrentUser=user.UserName, Token = tokenString, Message = "Success" });
+                }
             }
             return response;
         }

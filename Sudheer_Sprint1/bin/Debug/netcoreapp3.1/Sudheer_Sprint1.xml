@@ -9,11 +9,12 @@
             
             </summary>
         </member>
-        <member name="M:Sudheer_Sprint1.Controllers.AuthenticateController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+        <member name="M:Sudheer_Sprint1.Controllers.AuthenticateController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Sudheer_Sprint1.Repositories.IUserRepository)">
             <summary>
             
             </summary>
             <param name="config"></param>
+            <param name="baseRepository"></param>
         </member>
         <member name="M:Sudheer_Sprint1.Controllers.AuthenticateController.AuthenticateUser(Sudheer_Sprint1.Models.LoginModel)">
             <summary>

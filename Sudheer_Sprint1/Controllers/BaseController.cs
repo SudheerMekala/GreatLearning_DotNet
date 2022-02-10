@@ -12,7 +12,7 @@ namespace Sudheer_Sprint1.Controllers
     /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
+    //[Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
    public class BaseController<T> : ControllerBase where T : BaseModel

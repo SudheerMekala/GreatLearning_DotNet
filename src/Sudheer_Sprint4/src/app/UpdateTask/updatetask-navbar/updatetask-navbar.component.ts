@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginAuthenticationService } from "src/app/login/login-maincontent/Services/login-authentication.service";
+import { Router } from "@angular/router";
+
+
 
 @Component({
   selector: 'app-updatetask-navbar',
@@ -6,10 +10,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./updatetask-navbar.component.css']
 })
 export class UpdatetaskNavbarComponent implements OnInit {
+  constructor(private authService: LoginAuthenticationService, private router: Router) { }
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['']);
+  }
 
-  constructor() { }
+  getUserName()
+  {
+      return this.authService.getUserName();
+  }
 
   ngOnInit(): void {
   }
+
+  
 
 }

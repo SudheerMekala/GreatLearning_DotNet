@@ -1,37 +1,39 @@
 <div fxLayoutAlign="start top" fxFlexFill class="main-div">
     <mat-card style="background-color: whitesmoke" fxFlex="100">
-        <form>
+        <form novalidate #form="ngForm" (submit)="onSubmit(form)">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="FirstName">FirstName</label>
-                <input type="name" class="form-control" id="FirstName">
+                <label for="FirstName">First Name</label>
+                <input class="form-control" placeholder="First Name" name="firstName" #firstName="ngModel" [(ngModel)]="service.formData.firstName" required minlength="1" 
+                [class.invalid]="firstName.invalid && firstName.touched">
               </div>
               <div class="form-group col-md-6">
-                <label for="LastName">LastName</label>
-                <input type="name" class="form-control" id="LastName">
+                <label for="LastName">Last Name</label>
+                <input class="form-control" placeholder="Last Name" name="lastName" #lastName="ngModel" [(ngModel)]="service.formData.lastName" required minlength="0"
+                [class.invalid]="lastName.invalid && lastName.touched">
               </div>
             </div>
             <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Email">Email</label>
+                <input class="form-control" placeholder="abc@xyz" name="email" #email="ngModel" [(ngModel)]="service.formData.email" required minlength="1" ngModel [email]="true"
+                [class.invalid]="email.invalid && email.touched">
+              </div>
                 <div class="form-group col-md-6">
                   <label for="Password">Password</label>
-                  <input type="password" class="form-control" id="Password">
+                  <input class="form-control" placeholder="Password" name="password" #password="ngModel" [(ngModel)]="service.formData.password" required minlength="1"
+                  [class.invalid]="password.invalid && password.touched">
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="Email">Email</label>
-                    <input type="email" class="form-control" id="Email" placeholder="abc@xyz">
-                  </div>
               </div>
             <div class="form-group">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
+                
               </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-0">
-                    <button mat-stroked-button type="submit" style="background-color:white; margin:5px"  class="login-nav" [routerLink]="['/User']">
+                    <button mat-stroked-button type="submit" [disabled]="form.invalid"style="background-color:white; margin:5px"  class="login-nav">
+                    <!--[routerLink]="['/User']"-->
                         <mat-icon class="account-icon" [inline]="false">save</mat-icon>
                         <span>Submit</span>
                     </button>

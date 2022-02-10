@@ -6,16 +6,27 @@
                 <span style="font-size:8mm" class="login-toolbar" style="color:white;font-size:25px;">Welcome</span>
             </mat-toolbar-row>    
         </mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <mat-form-field>
                 <mat-label>UserName</mat-label>
-                <input matInput placeholder="UserName">
+                <input matInput type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" 
+                 placeholder="UserName">
+                 <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                    <div *ngIf="f.userName.errors.required">UserName is required</div>
+                </div>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Password</mat-label>
-                <input matInput type= "password" placeholder="Password">
+                <input matInput type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" 
+                 placeholder="Password">
+                 <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div>
             </mat-form-field>
-            <button mat-raised-button type="submit" style="background-color: brown; margin:5px" class="login-nav" [routerLink]="['/User']">
+            <button mat-raised-button style="background-color: brown; margin:5px" class="login-nav">
+                
+            <!-- [routerLink]="['/User']" -->
+            
                 <span style="color:white;font-size:25px; font-size: 4mm;">Login</span>
             </button>
         </form>

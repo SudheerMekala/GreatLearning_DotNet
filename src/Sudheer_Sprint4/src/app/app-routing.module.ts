@@ -10,10 +10,11 @@ import {CreateUserComponent} from  './CreateUser/CreateUser.component';
 import {CreateTaskComponent} from  './CreateTask/CreateTask.component';
 import {UpdateTaskComponent} from  './UpdateTask/UpdateTask.component';
 import {UpdateUserComponent } from './UpdateUser/UpdateUser.component'; 
+import { AuthGuard } from './Shared/auth.guard';
 
 const routes: Routes = [
 
-  { path: '', component: loginComponent },
+  { path: '', component: loginComponent,canActivate:[AuthGuard] },
   { path: 'Project', component: ProjectComponent },
   { path: 'CreateProject', component: CreateProjectComponent },
   { path: 'UpdateProject', component: UpdateProjectComponent },

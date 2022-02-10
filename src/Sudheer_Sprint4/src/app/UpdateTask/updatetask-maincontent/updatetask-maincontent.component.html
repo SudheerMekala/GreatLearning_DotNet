@@ -1,48 +1,75 @@
 <div fxLayoutAlign="start top" fxFlexFill class="main-div">
-    <mat-card style="background-color: whitesmoke" fxFlex="100">
-        <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="ProjectId">ProjectId</label>
-                <input type="name" class="form-control" id="ProjectId">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="Status">Status</label>
-                <input type="name" class="form-control" id="Status">
-              </div>
+  <mat-card style="background-color: whitesmoke" fxFlex="100">
+      <form id="newTaskForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="projectId">ProjectId</label>
+              <input type="text" formControlName="projectId" class="form-control" id="project-id" [(ngModel)]="task.projectId" 
+                [ngClass]="{ 'is-invalid': submitted && f.projectId.errors }">
+
+                <div *ngIf="submitted && f.projectId.errors" class="invalid-feedback" style="background-color:black;" >
+                    <div *ngIf="f.projectId.errors.required">ProjectId is required</div>
+                </div>   
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="AssignedtoUserId">Assigned to UserId</label>
-                  <input type="AssignedtoUserId" class="form-control" id="AssignedtoUserId">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="Detail">Detail</label>
-                    <input type="Detail" class="form-control" id="Detail">
+            
+            
+            <div class="form-group col-md-6">
+              <label for="status">Status</label>
+              <input type="text" formControlName="status" class="form-control" id="status" [(ngModel)]="task.status" 
+                [ngClass]="{ 'is-invalid': submitted && f.status.errors }">
+
+                <div *ngIf="submitted && f.status.errors" class="invalid-feedback" style="background-color:black;" >
+                    <div *ngIf="f.status.errors.required">Status is required</div>
+                </div>   
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="assignedToUserId">Assigned To UserId</label>
+              <input type="text" class="form-control" formControlName="assignedToUserId" id="assignedToUserId" [(ngModel)]="task.assignedToUserId" [ngClass]="{ 'is-invalid': submitted && f.assignedToUserId.errors }">
+                  <div *ngIf="submitted && f.assignedToUserId.errors" class="invalid-feedback" style="background-color:black;" >
+                      <div *ngIf="f.assignedToUserId.errors.required">Assigned UserId is required</div>
                   </div>
             </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
+
+            <div class="form-group col-md-6">
+              <label for="Detail">Detail</label> 
+              <input type="text"  formControlName="detail" class="form-control" id="detail"  [(ngModel)]="task.detail"
+                  [ngClass]="{ 'is-invalid': submitted && f.detail.errors }"/>
+                  <div *ngIf="submitted && f.detail.errors" class="invalid-feedback" style="background-color:black;" >
+                      <div *ngIf="f.detail.errors.required">Detail is required</div>
+                  </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-0">
-                    <button mat-stroked-button type="submit" style="background-color:white; margin:5px"  class="login-nav" [routerLink]="['/Task']">
-                        <mat-icon class="account-icon" [inline]="false">save</mat-icon>
-                        <span>Submit</span>
-                    </button>
-                </div>
-                <div class="form-group col-md-1">
-                    <button mat-stroked-button type="submit" style="background-color: white; margin:5px" class="login-nav" [routerLink]="['/Task']">
-                        <mat-icon class="account-icon" [inline]="false">cancel</mat-icon>
-                        <span>Cancel</span>
-                    </button>
-                </div>
-              </div>
-          </form>
-    </mat-card>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col-md-0">
+              <button mat-stroked-button class="login-nav" style="background-color:white; margin:5px" type="submit" form="newTaskForm" >
+                <mat-icon class="account-icon" [inline]="false">save</mat-icon>
+                <span>Submit</span>
+                <!-- <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1">
+                </span>Save</button> -->
+              </button>
+            </div>
+
+            <div class="form-group col-md-1">
+              <button mat-stroked-button class="login-nav" style="background-color:white; margin:5px" type="button" [routerLink]="['/Task']">
+                <mat-icon class="account-icon" [inline]="false">cancel</mat-icon>
+                  <span>Cancel</span>
+                </button>
+            </div>
+          </div>
+        </form>
+      
+  </mat-card>
 </div>

@@ -1,24 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
-import { BrowserModule } from '@angular/platform-browser'; 
-
-
-export interface UserElement {
-  id: number;
-  FirstName : string;
-  LastName: string;
-  Email: string;
-  Password : string ;
-}
-
-
-const ELEMENT_DATA: UserElement[] = [
-  {id: 1, FirstName: 'John', LastName: 'Doe',Email: 'john.doe@test.com', Password:'Password1'},
-  {id: 2, FirstName: 'John', LastName: 'Skeet',Email: 'john.skeet@test.com', Password:'Password1'},
-  {id: 3, FirstName: 'Mark', LastName: 'Seeman',Email: 'mark.seeman@test.com', Password:'Password1'},
-  {id: 4, FirstName: 'Bob', LastName: 'Martin',Email: 'mark.seeman@test.com', Password:'Password1'},
-]
+import { BrowserModule } from '@angular/platform-browser';
+import { UserMaincontentService } from './Services/user-maincontent-service.service'
+import { UserModel } from 'src/app/Shared/user-model.model'; 
 
 @Component({
   selector: 'app-user-maincontent',
@@ -26,55 +11,44 @@ const ELEMENT_DATA: UserElement[] = [
   styleUrls: ['./user-maincontent.component.css']
 })
 export class UserMaincontentComponent implements OnInit {
+  public users!: Array<UserModel>
+  
+  ELEMENT_DATA!: UserModel[]
 
-  constructor(private router : Router) { }
-
-  columns = [
-    {
-      columnDef: 'id',
-      header: 'id',
-      cell: (element: UserElement) => `${element.id}`,
-    },
-    {
-      columnDef: 'FirstName',
-      header: 'FirstName',
-      cell: (element: UserElement) => `${element.FirstName}`,
-    },
-    {
-      columnDef: 'LastName',
-      header: 'LastName',
-      cell: (element: UserElement) => `${element.LastName}`,
-    },
-    {
-      columnDef: 'Email',
-      header: 'Email',
-      cell: (element: UserElement) => `${element.Email}`,
-    },
-  ];
-
-  dataSource = ELEMENT_DATA;
-  displayedColumns = this.columns.map(c => c.columnDef);
-
-  addData() {
+  ngOnInit()
+  {
+    // this.service.getAllUsers()
+    //  .subscribe(result=>{
+    //   this.users = JSON.parse(JSON.stringify(result)); 
+    //  });
+    //this.ELEMENT_DATA=this.service.GetListOfUsers(); 
+    //this.service.RefreshListOfUsers.then(tables => )
   }
 
-  removeData() {
+  constructor(public service: UserMaincontentService, private router : Router) 
+  { 
+    //this.ELEMENT_DATA=service.list; 
   }
 
-  ngOnInit(): void {
-  }
+  dataSource = this.service.GetListOfUsers();
+  //displayedColumns = this.columns.map(c => c.columnDef);
 
-  routeToHotelId(id: number) {
-    this.router.navigate(['/hotels/' + id]);
-  }
+  // populateData(selectedRecord:UserModel)
+  // {
+  //   this.service.formData=Object.assign({},selectedRecord);
+  // }
 
-  sendRouteObject() {
-    this.router.navigate(['/UpdateUser'], {
-      state: {
-        frontEnd: JSON.stringify({ framwork: 'Angular', version: '9' }),
-        site: 'edupala.com'
-      }
-    });
-  }
+  // routeToHotelId(id: number) {
+  //   this.router.navigate(['/hotels/' + id]);
+  // }
+
+  // sendRouteObject() {
+  //   this.router.navigate(['/UpdateUser'], {
+  //     state: {
+  //       frontEnd: JSON.stringify({ framwork: 'Angular', version: '9' }),
+  //       site: 'edupala.com'
+  //     }
+  //   });
+  // }
 }
 

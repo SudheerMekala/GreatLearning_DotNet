@@ -1,48 +1,71 @@
 <div fxLayoutAlign="start top" fxFlexFill class="main-div">
-    <mat-card style="background-color: whitesmoke" fxFlex="100">
-        <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="FirstName">FirstName</label>
-                <input type="name" class="form-control" id="FirstName">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="LastName">LastName</label>
-                <input type="name" class="form-control" id="LastName">
-              </div>
+  <mat-card style="background-color: whitesmoke" fxFlex="100">
+      <form id="newUserForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="firstName">First Name</label>
+              <input type="text" formControlName="firstName" class="form-control" id="first-name" [(ngModel)]="user.firstName" 
+                [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback" style="background-color:black;" >
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div>   
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="Password">Password</label>
-                  <input type="password" class="form-control" id="Password">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="Email">Email</label>
-                    <input type="email" class="form-control" id="Email" placeholder="abc@xyz">
+            
+            <div class="form-group col-md-6">
+              <label for="lastName">Last Name</label>
+              <input type="text" formControlName="lastName" class="form-control" id="lastName" [(ngModel)]="user.lastName"/>
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" formControlName="email" id="email" [(ngModel)]="user.email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback" style="background-color:black;" >
+                      <div *ngIf="f.email.errors.required">Email is required</div>
                   </div>
-              </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-0">
-                    <button mat-stroked-button type="submit" style="background-color:white; margin:5px"  class="login-nav" [routerLink]="['/User']">
-                        <mat-icon class="account-icon" [inline]="false">save</mat-icon>
-                        <span>Submit</span>
-                    </button>
-                </div>
-                <div class="form-group col-md-1">
-                    <button mat-stroked-button type="submit" style="background-color: white; margin:5px" class="login-nav" [routerLink]="['/User']">
-                        <mat-icon class="account-icon" [inline]="false">cancel</mat-icon>
-                        <span>Cancel</span>
-                    </button>
-                </div>
-              </div>
-          </form>
-    </mat-card>
+
+            <div class="form-group col-md-6">
+              <label for="password">Password</label> 
+              <input type="password"  formControlName="password" class="form-control" id="password" 
+                  [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback" style="background-color:black;" >
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                  </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col-md-0">
+              <button mat-stroked-button class="login-nav" style="background-color:white; margin:5px" type="submit" form="newUserForm" >
+                <mat-icon class="account-icon" [inline]="false">save</mat-icon>
+                <span>Submit</span>
+                <!-- <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1">
+                </span>Save</button> -->
+              </button>
+            </div>
+
+            <div class="form-group col-md-1">
+              <button mat-stroked-button class="login-nav" style="background-color:white; margin:5px" type="button" [routerLink]="['/User']">
+                <mat-icon class="account-icon" [inline]="false">cancel</mat-icon>
+                  <span>Cancel</span>
+                </button>
+            </div>
+          </div>
+      </form>
+  </mat-card>
 </div>
+
+
+

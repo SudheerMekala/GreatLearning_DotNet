@@ -49,7 +49,7 @@ namespace Sudheer_Sprint1
                     Title = "Sprint Planner API",
                     Description = "ASP.NET Core 3.1 Web API"
                 });
-                // To Enable authorization using Swagger (JWT)  
+                //To Enable authorization using Swagger (JWT)  
                 swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
                     Name = "Authorization",
@@ -73,6 +73,9 @@ namespace Sudheer_Sprint1
                             new string[] {}
                     }
                 });
+
+                
+                services.AddCors();
             });
 
             services.AddAuthentication(option =>
@@ -110,6 +113,10 @@ namespace Sudheer_Sprint1
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options => options.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

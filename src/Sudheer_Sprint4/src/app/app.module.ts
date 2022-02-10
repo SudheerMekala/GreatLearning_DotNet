@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import {loginComponent} from  './login/login.component';
 import {ProjectComponent} from  './Project/Project.component';
@@ -76,6 +77,10 @@ import { UpdatetaskNavbarComponent } from './UpdateTask/updatetask-navbar/update
 import { UpdatetaskHeaderComponent } from './UpdateTask/updatetask-header/updatetask-header.component';
 import { UpdatetaskFooterComponent } from './UpdateTask/updatetask-footer/updatetask-footer.component';
 import { UpdatetaskMaincontentComponent } from './UpdateTask/updatetask-maincontent/updatetask-maincontent.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { DatePipe } from '@angular/common';
+
 
 
 
@@ -142,9 +147,12 @@ import { UpdatetaskMaincontentComponent } from './UpdateTask/updatetask-maincont
     UpdatetaskHeaderComponent,
     UpdatetaskFooterComponent,
     UpdatetaskMaincontentComponent,
+   
   ],
   imports: [
     BrowserModule,
+    FormsModule,                              
+    ReactiveFormsModule,
     AppRoutingModule,
     AgGridModule,
     BrowserAnimationsModule,
@@ -159,9 +167,11 @@ import { UpdatetaskMaincontentComponent } from './UpdateTask/updatetask-maincont
     MatTableModule,
     MatSidenavModule,
     MatPaginatorModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule,
+    ToastrModule.forRoot() ,
   ],
-  providers: [],
+  providers: [ DatePipe,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

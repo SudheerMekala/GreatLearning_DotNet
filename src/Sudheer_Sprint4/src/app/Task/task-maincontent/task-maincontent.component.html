@@ -1,19 +1,53 @@
 <div fxLayoutAlign="start top" fxFlexFill class="main-div">
-    <mat-card style="background-color: whitesmoke" fxFlex="100">
-        <form fxLayout="column" class="user-form">
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
-                <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
-                  <th mat-header-cell *matHeaderCellDef>
-                    {{column.header}}
-                  </th>
-                  <td mat-cell *matCellDef="let row" >
-                    <!--span style="cursor:pointer;" (click)="sendRouteObject()" >{{column.cell(row)}}</span-->
-                    <span style="cursor:pointer;" [routerLink]="['/UpdateTask']" [queryParams]="{by: ''}">{{column.cell(row)}}</span>
-                  </td>
-                </ng-container>
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> 
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-        </form>
-    </mat-card>
+  <mat-card style="background-color: whitesmoke" fxFlex="100">
+      <form fxLayout="column" class="task-form">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">ProjectId</th>
+              <th scope="col">Status</th>
+              <th scope="col">AssignedToUserId</th>
+              <th scope="col">Detail</th>
+              <th scope="col">CreatedOn</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of service.list"> 
+              <th scope="row">{{task.id}}</th>
+              <td style="cursor:pointer;" [routerLink]="['/UpdateTask']" [queryParams]="{id: task.id}"> 
+                <span>{{task.projectId}}</span>
+              </td>  
+              <td style="cursor:pointer;" [routerLink]="['/UpdateTask']" [queryParams]="{id: task.id}">
+                <span>{{task.status}}</span>
+              </td>
+              <td style="cursor:pointer;" [routerLink]="['/UpdateTask']" [queryParams]="{id: task.id}">
+                <span>{{task.assignedToUserId}}</span>
+              </td>
+              <td style="cursor:pointer;" [routerLink]="['/UpdateTask']" [queryParams]="{id: task.id}">
+                <span>{{task.detail}}</span>
+              </td>
+              <td style="cursor:pointer;" [routerLink]="['/UpdateTask']" [queryParams]="{id: task.id}">
+                <span>{{task.createdOn}}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       
+
+          <!--table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+              <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+                <th mat-header-cell *matHeaderCellDef>
+                  {{column.header}}
+                </th>
+                <td mat-cell *matCellDef="let row" >
+                  <span style="cursor:pointer;" (click)="sendRouteObject()" >{{column.cell(row)}}</span>
+                  <span style="cursor:pointer;" [routerLink]="['/Updatetask']" [queryParams]="{by: ''}">{{column.cell(row)}}</span>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> 
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table-->
+      </form>
+  </mat-card>
 </div>
